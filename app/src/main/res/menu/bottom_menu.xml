@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/transactionFragment"
+        android:title="@string/transactions"
+        android:icon="@drawable/icon_config"
+        />
+
+    <item
+        android:id="@+id/configFragment"
+        android:title="@string/configuration"
+        android:icon="@drawable/icon_config"
+        />
+</menu>
