@@ -3,13 +3,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/red"
-    tools:context=".view.ConfigFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/primary"
+    tools:context=".ui.configuration.ConfigFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="30dp"
+            android:textFontWeight="@integer/material_motion_duration_long_2"
+            android:text="Configuración"
+            android:textColor="@color/secondary"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            />
+
+        <Button
+        android:id="@+id/btnSample"
+            android:textColor="@color/primary"
+        app:layout_constraintTop_toBottomOf="@id/lblTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+            android:backgroundTint="@color/secondary"
+        android:layout_height="wrap_content"
+        android:text="Crear transacciones de ejemplo"
+            android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btnClear"
+        android:gravity="center"
+        android:textColor="@color/primary"
+        app:layout_constraintTop_toBottomOf="@+id/btnSample"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/secondary"
+        android:text="Borrar transacciones"
+        />
+
+
+
+
+        <EditText
+
+            android:id="@+id/txtPassword"
+            android:textColor="@color/primary"
+            android:textColorHint="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/btnClear"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:paddingTop="50dp"
+            android:hint="Contraseña API"
+            android:inputType="textPassword"
+             />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:textColor="@color/primary"
+            app:layout_constraintTop_toBottomOf="@+id/txtPassword"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/secondary"
+            android:text="Guardar contraseña" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

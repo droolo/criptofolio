@@ -3,16 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/configFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
         android:id="@+id/configFragment"
-        android:name="com.universae.criptofolio.view.ConfigFragment"
+        android:name="com.universae.criptofolio.ui.configuration.ConfigFragment"
         android:label="fragment_config"
         tools:layout="@layout/fragment_config" />
     <fragment
         android:id="@+id/transactionFragment"
-        android:name="com.universae.criptofolio.view.TransactionFragment"
+        android:name="com.universae.criptofolio.ui.transaction.TransactionFragment"
         android:label="fragment_transaction"
-        tools:layout="@layout/fragment_transaction" />
+        tools:layout="@layout/fragment_transaction" >
+        <action
+            android:id="@+id/action_transactionFragment_to_transactionNewActivity"
+            app:destination="@id/transactionNewActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/transactionNewActivity"
+        android:name="com.universae.criptofolio.ui.transactiondetail.TransactionNewActivity"
+        android:label="activity_transaction_new"
+        tools:layout="@layout/activity_transaction_new" />
+    <fragment
+        android:id="@+id/coinFragment"
+        android:name="com.universae.criptofolio.ui.coin.CoinFragment"
+        android:label="fragment_coin"
+        tools:layout="@layout/fragment_coin" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.universae.criptofolio.ui.main.MainFragment"
+        android:label="MainFragment" />
 </navigation>

@@ -10,4 +10,6 @@
 
     <color name="red">#FF0000</color>
     <color name="yellow">#FFFFEB3B</color>
+    <color name="primary">#0a2648</color>
+    <color name="secondary">#b6e1f9</color>
 </resources>
