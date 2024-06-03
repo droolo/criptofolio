@@ -32,10 +32,7 @@ class ConfigFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initUI()
 
-        val sharedPreferences = requireActivity().getSharedPreferences("mi_preferencia", Context.MODE_PRIVATE)
-        val valorGuardado = sharedPreferences.getString("api_key", "")
-
-        binding.txtPassword.setText(valorGuardado)
+        binding.txtPassword.setText(prefs.getApiKey())
     }
 
     private fun initUI() {

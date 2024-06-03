@@ -53,7 +53,7 @@
         <EditText
 
             android:id="@+id/txtPassword"
-            android:textColor="@color/primary"
+            android:textColor="@color/secondary"
             android:textColorHint="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/btnClear"
             app:layout_constraintLeft_toLeftOf="parent"
