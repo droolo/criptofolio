@@ -1,5 +1,6 @@
 package com.universae.criptofolio.ui.configuration
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.universae.criptofolio.CriptofolioApp.Companion.prefs
 import com.universae.criptofolio.databinding.FragmentConfigBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -29,6 +31,11 @@ class ConfigFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUI()
+
+        val sharedPreferences = requireActivity().getSharedPreferences("mi_preferencia", Context.MODE_PRIVATE)
+        val valorGuardado = sharedPreferences.getString("api_key", "")
+
+        binding.txtPassword.setText(valorGuardado)
     }
 
     private fun initUI() {
@@ -45,7 +52,8 @@ class ConfigFragment : Fragment() {
             Toast.makeText(it.context, "Transacciones eliminadas", Toast.LENGTH_LONG).show()
         }
 
+        binding.btnSave.setOnClickListener{
+            prefs.saveApiKey(binding.txtPassword.text.toString())
+        }
     }
-
-
 }
