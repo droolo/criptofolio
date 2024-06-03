@@ -54,6 +54,7 @@ class ConfigFragment : Fragment() {
 
         binding.btnSave.setOnClickListener{
             prefs.saveApiKey(binding.txtPassword.text.toString())
+            Toast.makeText(it.context, "Api key guardada correctamente", Toast.LENGTH_LONG).show()
         }
     }
 }
